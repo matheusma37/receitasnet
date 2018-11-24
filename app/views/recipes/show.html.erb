@@ -22,3 +22,4 @@
 
 <%= link_to "Receitas" , recipes_path %>
 <%= link_to "Editar Receita" , edit_recipe_path(@recipe) %>
+<%= link_to "Deletar Receita" , recipe_path(@recipe), method: :delete, data:{confirm:"Deseja deletar essa receita?"} %>
