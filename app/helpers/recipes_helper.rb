@@ -9,7 +9,7 @@ module RecipesHelper
 
 	def imagem(recipe)
 		if recipe.poster.blank?
-			image_tag('sem-imagem.jpg')
+			image_tag('sem-imagem.jpg', size:'140')
 		else
 			image_tag(recipe.poster)
 		end
