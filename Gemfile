@@ -34,6 +34,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'coffee-script-source', '1.8.0'
+gem 'bootstrap-sass'
+gem 'compass-rails', github: 'Compass/compass-rails'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
