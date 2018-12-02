@@ -1,38 +1,49 @@
-<article>
-	<header>
-		<h1> <%= @recipe.name %> </h1>
-		<%= imagem(@recipe) %>
-	</header>
-	<h2>Tipo</h2>
-	<p>
-		<%= @recipe.kind %>
-	</p>
-	<h2>Ingredientes</h2>
-	<p>
-		<%= @recipe.stuff %>
-	</p>
-	<h2>Calorias</h2>
-	<p>
-		<%= @recipe.calories %>
-	</p>
-	<h3>Modo de preparo</h3>
-	<p>
-		<%= @recipe.prepare_mode %>
-	</p>
-	<h3>Tempo de Preparo</h3>
-	<p>
-		<%= @recipe.duration.to_formatted_s(:time) %> min
-	</p>
-	<h3>Porções</h3>
-	<p>
-		<%= pluralize(@recipe.portion, 'porção', 'porções') %>
-	</p>
-	<h3>Custo</h3>
-	<p>
-		<%= @recipe.cost %>
-	</p>
-</article>
+<div class="container">
+	<div class="jumbotron">
+		<article>
+			<header>
+				<h1> <%= @recipe.name %> </h1>
+				<%= imagem(@recipe) %>
+			</header>
+			<h2>Tipo</h2>
+			<p>
+				<%= @recipe.kind %>
+			</p>
+			<h2>Ingredientes</h2>
+			<p>
+				<%= @recipe.stuff %>
+			</p>
+			<h2>Calorias</h2>
+			<p>
+				<%= @recipe.calories %>
+			</p>
+			<h3>Modo de preparo</h3>
+			<p>
+				<%= @recipe.prepare_mode %>
+			</p>
+			<h3>Tempo de Preparo</h3>
+			<p>
+				<%= @recipe.duration.to_formatted_s(:time) %> min
+			</p>
+			<h3>Porções</h3>
+			<p>
+				<%= pluralize(@recipe.portion, 'porção', 'porções') %>
+			</p>
+			<h3>Custo</h3>
+			<p>
+				<%= @recipe.cost %>
+			</p>
+		</article>
+	</div>
 
-<%= link_to "Receitas" , recipes_path %>
-<%= link_to "Editar Receita" , edit_recipe_path(@recipe) %>
-<%= link_to "Deletar Receita" , recipe_path(@recipe), method: :delete, data:{confirm:"Deseja deletar essa receita?"} %>
+	<%= link_to recipes_path, class:"btn btn-link" do %>
+		<i class="glyphicon glyphicon-home"> Receitas</i>
+	<% end %>
+	<%= link_to edit_recipe_path(@recipe), class:"btn btn-link" do %>
+		<i class="glyphicon glyphicon-edit"> Editar</i>
+	<% end %>
+	<%= link_to recipe_path(@recipe), method: :delete, data:{confirm:"Deseja deletar essa receita?"}, class:"btn btn-link" do %>
+		<i class="glyphicon glyphicon-remove-sign"> Deletar</i>
+	<% end %>
+
+</div>
