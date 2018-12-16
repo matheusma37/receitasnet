@@ -4,6 +4,8 @@ class Recipe < ApplicationRecord
 	validates_length_of :prepare_mode, maximum: 300
 	validates_numericality_of :calories, greather_than_or_equal_to:0, presence:true
 	validates_format_of :poster, allow_blank:true, with:/\w+\.(gif|jpeg|png)\z/i, message:"utiliza apenas os formatos GIF, JPEG ou PNG"
+	
+	has_many :comments, dependent: :destroy
 
 	KIND = %w{Carnes Aves Peixes Massas Saladas Doces}
 	validates_inclusion_of :kind, in: KIND
