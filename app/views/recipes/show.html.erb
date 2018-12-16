@@ -31,10 +31,11 @@
 			</p>
 			<h3>Custo</h3>
 			<p>
-				<%= number_to_currency(recipe.cost) %>
+				<%= number_to_currency(@recipe.cost) %>
 			</p>
 		</article>
 		<%= link_to pluralize(@recipe.comments.size, 'Comentário', 'Comentários'), recipe_comments_path(@recipe) %>
+		<%= link_to "Novo Comentário", new_recipe_comment_path(@recipe), class:"btn btn-primary" %>
 	</div>
 
 	<%= link_to recipes_path, class:"btn btn-link" do %>
